@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<hr>
+
+<center><h1>My skills</h1>
+
+<img src="{% static 'backend.png' %}" width="55%" height="20%" alt="">
+</center>
+<div class="skills1">
+  <img src="{% static 'c++.png' %}" width="10%" height="10%" alt="">
+  <img src="{% static 'skil.png' %}" width="10%" height="10%" alt="">
+  <img src="{% static 'skil6.png' %}" width="10%" height="10%" alt="">
+  </div>
+  <hr>
+
+<center><img src="{% static 'frontend.png' %}" width="55%" height="20%" alt=""></center>
+  <div class="skills2">
+  <img src="{% static 'html1.png' %}" width="10%" height="10%" alt="">
+  <img src="{% static 'css.png' %}" width="8%" height="8%" alt="">
+  <img src="{% static 'get.png' %}" width="10%" height="10%" alt="">
+
+</div>
+<br>
+<br>
+<center><h1>My works</h1></center>
+<br>
+<br>
+<br>
+<div class="big-work">
+
+{% for project in projects %}
+
+
+  <div class="work">
+
+          <a href="{{ project.url }}">
+            <img  src="{{ project.image.url }}"  height="400px" width="100%">
+          </a>
+
+      <h1>{{ project.title }}</h1>
+
+        <b>{{ project.comment }}</b>
+      </div>
+{% endfor %}
+
+</div>
+
+{% endblock %}

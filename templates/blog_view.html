@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<br>
+<br>
+<style>
+html{
+  min-height: 100%;
+}
+body {
+  background-image: url('{% static 'blog3.jpg' %}');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+</style>
+<hr>
+    <center>
+      <h2>{{ blog.blog_title }}</h2>
+      <hr>
+      <p>{{ blog.text|safe }}</p>
+      <br>
+      <h6><p>{{ blog.date|date:'M d Y'|upper }}</p></h6>
+    </center>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<center>
+  <hr>
+  <style>
+  html{
+    min-height: 100%;
+  }
+  body {
+    background-image: url('{% static 'blog3.jpg' %}');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  </style>
+  <h1>BLOG</h1>
+<h2>To'lqin has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h2>
+<br>
+<hr>
+{% for blog in blogs %}
+<a href="/blog/view/{{ blog.id }}"><h2>{{ blog.blog_title }}</h2></a>
+<p>{{ blog.text|striptags|truncatechars:150 }}</p>
+<h5>{{ blog.date|date:'M d Y'|upper }}</h5>
+{% endfor %}
+</center>
+{% endblock %}

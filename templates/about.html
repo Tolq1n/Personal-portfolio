@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<hr>
+
+<!-- <section class="first-section"> -->
+<div class="container">
+  <div class="about2">
+    <div class="about">
+    <img src="{% static 'ab.png' %}" width="100%" height="100%" alt="dam ovotti mario">
+    </div>
+    <div class="about1">
+      <h3>Assalomu aleykum !</h3>
+
+      <p>
+        Mening ismim To'lqin, yoshim 21 da.<u>Toshkent davlat texnika universiteti 4-kurs </u> talabasiman.2021-yildan beri Web dasturlash
+      sohasini o'rganiyapman.Fundament uchun <mark>C++</mark>  so'ngra <mark>Python</mark> dasturlash tilini o'rgandim. Hozirda <mark>Django</mark> frameworkida ishlayapman va
+      bu frameworkda bir nechta loyihalarni bajarib ko'rdim.Ushbu loyihalarning ayrimlarin <a class="nav-link" href="{% url 'work' %}"><img src="{% static 'skil4.png' %}" width="45" height="45" class="d-inline-block align-top-light">  Works&Skills</a> da ishlatib ko'rishingiz mumkin.
+      <br><br><br><b>Maqsad:</b>Jamoa bilan ishlab ko'nikmalarimni orttirish.
+      </p>
+    </div>
+    </div>
+
+</div>
+<!-- </section> -->
+
+{% endblock %}

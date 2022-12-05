@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+<hr>
+
+<style>
+html{
+  min-height: 100%;
+}
+body {
+  background-image: url('{% static 'back3.jpg' %}');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+</style>
+
+<center>
+<table>
+  <td>
+    <div class="image-cropper">
+    <img src="{% static 'hero1.png' %}"  height="320px" width="320px">
+    </div>
+  </td>
+</table>
+
+<div class="justify-content-center">
+<h2>Assalomu aleykum!</h2>
+<h1 id="hometext" class="font-weight-bold" ></h1>
+<h1 id="hometext1" class="font-weight-bold"></h1>
+</div>
+<div class="justify-content-center">
+
+  </div>
+
+
+    <center>
+    <table>
+      <td>
+        <a class="nav-link" href="https://www.instagram.com/tolqin3647/?hl=ru" target="_blank"><img src="{% static 'do1.png' %}" width="38" height="38" class="d-inline-block align-top-light"> Resume</a>
+      </td>
+      <td>
+        <a class="nav-link" href="{% url 'about' %}"><img src="{% static 'user2.png' %}" width="40" height="40" class="d-inline-block align-top-light"> About</a>
+      </td>
+    </table>
+    </center>
+
+    <script>
+
+      const text = document.querySelector("#hometext")
+      const text1 = document.querySelector("#hometext1")
+
+      let Text = "My name is To'lqin." ,
+          Text1 =   " I'm backend developer."
+
+let i = 0, i1 = 0
+let e = '', e1 = ''
+
+
+  const call = setInterval(() => {
+
+       if(i === Text.length){
+           text.innerHTML = e
+
+
+          if(i1 === Text1.length){
+
+
+           i = 0; e = ''
+           i1 = 0; e1 = ''
+             // text1.innerHTML = ''
+            clearInterval(call)
+
+          }
+          else{
+              e1 = e1 + Text1[i1]
+              i1++
+              text1.innerHTML = e1
+          }
+
+
+
+
+        }
+      else{
+          e = e + Text[i]
+          i++
+          text.innerHTML = e
+      }
+  },200)
+    </script>
+
+{% endblock %}

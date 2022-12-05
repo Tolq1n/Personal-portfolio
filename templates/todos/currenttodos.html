@@ -1,0 +1,30 @@
+{% extends "basetodo.html" %}
+
+{% block content %}
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-10">
+            {% if todos %}
+                 <center><h1>{{ todos.count }} Current Todo{{ todos.count|pluralize }}</h1></center>
+            {% else %}
+                           <center><h1>Current Todos</h1></center>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-10">
+        {% if todos %}
+            <div class="list-group">
+                {% for todo in todos %}
+                    <a href="{% url 'viewtodos' todo.id %}" class="list-group-item list-group-item-action{% if todo.important %} list-group-item-danger {% else %} list-group-item-primary {% endif %}"><b>{{ todo.title }}</b>{% if todo.comment %} - {{ todo.comment|truncatechars:30 }}{% endif %}</a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="text-center">
+                <h2>Looks like you don't have any todos! Nice work.</h2>
+            <br>
+            <a role="button" class="btn btn-primary" href="{% url 'createtodos' %}">New Todo</a>
+            </div>
+        {% endif %}
+        </div>
+    </div>
+{% endblock %}
