@@ -1,1 +1,4 @@
 myenv
+my_env
+__pycache__/
+db.sqlite3
